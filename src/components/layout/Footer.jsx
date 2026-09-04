@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 const GithubIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -40,21 +40,25 @@ const Footer = () => {
       style={{ background: '#F6F3EE' }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-12 mb-14">
 
-          <div className="md:col-span-2">
-            <Link
-              to="/"
-              className="group inline-flex items-center gap-[3px] text-xl font-black tracking-[-0.03em] text-[#111111] mb-4"
-            >
-              NARESH
-              <span className="w-[5px] h-[5px] rounded-full bg-[#0070F3] mb-3 transition-transform duration-300 group-hover:scale-125" />
-            </Link>
-            <p className="text-[#4B5563] mb-6 max-w-sm leading-relaxed">
-              Web · Software · Automation · Digital Products
-            </p>
-          </div>
+        {/* Brand block */}
+        <div className="mb-10">
+          <Link
+            to="/"
+            className="group inline-flex items-center gap-[3px] text-xl font-black tracking-[-0.03em] text-[#111111]"
+          >
+            NARESH
+            <span className="w-[5px] h-[5px] rounded-full bg-[#0070F3] mb-3 transition-transform duration-300 group-hover:scale-125" />
+          </Link>
+          <p className="text-[#4B5563] mt-2 max-w-sm leading-relaxed">
+            Web · Software · Automation · Digital Products
+          </p>
+        </div>
 
+        {/* Navigation + Connect — always side-by-side on all screen sizes */}
+        <div className="grid grid-cols-2 gap-8 sm:gap-16 mb-14" style={{ maxWidth: '28rem' }}>
+
+          {/* Navigation */}
           <div>
             <h4 className="font-bold text-[#111111] tracking-tight mb-5 text-[15px]">Navigation</h4>
             <ul className="space-y-3.5 text-[#4B5563]">
@@ -71,6 +75,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/* Connect */}
           <div>
             <h4 className="font-bold text-[#111111] tracking-tight mb-5 text-[15px]">Connect</h4>
             <ul className="space-y-3">
@@ -103,12 +108,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-7 border-t border-[var(--border-color)] text-[13.5px] text-[#6B7280]">
+        {/* Bottom bar */}
+        <div className="pt-7 border-t border-[var(--border-color)] text-[13.5px] text-[#6B7280]">
           <p className="font-medium">© {currentYear} Naresh. All rights reserved.</p>
-          <span className="font-mono text-[11.5px] text-[#9CA3AF] tracking-tight">
-            Built with React &amp; Vite
-          </span>
         </div>
+
       </div>
     </footer>
   );

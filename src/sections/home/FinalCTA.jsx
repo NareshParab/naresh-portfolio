@@ -5,7 +5,7 @@ const FinalCTA = () => {
   return (
     <section className="py-24 lg:py-32 bg-[var(--text-primary)] text-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-6">
           Have an idea?<br />
           <span className="text-gray-400">Let's build it.</span>
         </h2>

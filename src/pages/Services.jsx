@@ -14,10 +14,10 @@ const fadeUp = (delay = 0) => ({
 const Services = () => {
   return (
     <>
-      <div className="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-[var(--bg-color)]">
+      <div className="pt-20 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 bg-[var(--bg-color)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-          <div className="max-w-3xl mb-20">
+          <div className="max-w-3xl mb-12 sm:mb-16 lg:mb-20">
             <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2 mb-5">
               <span className="w-6 h-[2px] bg-[#0070F3] rounded-full" />
               <span className="text-[11px] font-mono font-semibold tracking-[0.18em] text-[#0070F3] uppercase">
@@ -35,7 +35,7 @@ const Services = () => {
             </motion.p>
           </div>
 
-          <div className="space-y-24 lg:space-y-28">
+          <div className="space-y-16 sm:space-y-24 lg:space-y-28">
             {services.map((service, index) => {
               const Icon = service.icon;
               return (

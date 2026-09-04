@@ -6,7 +6,7 @@ const SelectedProjects = () => {
   const featuredProjects = projects.filter(p => p.featured).slice(0, 3);
 
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-16 sm:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="max-w-2xl mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">

@@ -16,7 +16,7 @@ const Projects = () => {
 
   return (
     <>
-      <div className="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[var(--bg-color)] min-h-screen">
+      <div className="pt-20 pb-16 sm:pt-32 sm:pb-20 lg:pt-48 lg:pb-32 bg-[var(--bg-color)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
           <div className="max-w-3xl mb-16">

@@ -5,7 +5,7 @@ import { services } from '../../data/services';
 
 const ServicesPreview = () => {
   return (
-    <section className="py-24 lg:py-32 bg-white border-y border-[var(--border-color)]">
+    <section className="py-16 sm:py-24 lg:py-32 bg-white border-y border-[var(--border-color)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         <motion.div

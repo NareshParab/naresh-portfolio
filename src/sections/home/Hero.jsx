@@ -61,7 +61,7 @@ const DashboardVisual = () => {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-        className="relative bg-white rounded-[24px] border border-[#E5E7EB] shadow-[0_16px_48px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col min-h-[440px]"
+        className="relative bg-white rounded-[24px] border border-[#E5E7EB] shadow-[0_16px_48px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col"
       >
         {/* Window chrome */}
         <div className="flex items-center justify-between px-5 py-3.5 border-b border-[#F0F0F0] bg-white relative z-20">
@@ -118,7 +118,7 @@ const DashboardVisual = () => {
                     <p className="text-[12px] text-[#666] font-medium mt-1">A clear, simple workflow from idea to impact.</p>
                   </div>
                   
-                  <div className="flex items-start justify-between relative w-full px-2">
+                  <div className="flex items-start justify-between relative w-full px-2 overflow-x-auto">
                     <div className="absolute left-8 right-8 top-[22px] border-t-2 border-dotted border-[#E5E7EB] -z-10" />
                     {processSteps.map((item) => {
                       const Icon = item.icon;
@@ -177,9 +177,9 @@ const DashboardVisual = () => {
 /* ---------- Hero ---------- */
 const Hero = () => {
   return (
-    <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+    <section className="relative pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
 
           {/* ── Left: Copy ── */}
           <div className="max-w-xl">

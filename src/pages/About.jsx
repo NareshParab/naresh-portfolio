@@ -37,7 +37,7 @@ const whatIDo = [
 const About = () => {
   return (
     <>
-      <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <div className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
 
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div
@@ -52,7 +52,7 @@ const About = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <div>
               <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2 mb-6">
                 <span className="w-6 h-[2px] bg-[#0070F3] rounded-full" />
@@ -99,7 +99,7 @@ const About = () => {
               className="flex justify-center lg:justify-end w-full"
             >
               <div
-                className="relative w-full max-w-md aspect-square rounded-[32px] border border-[var(--border-color)]
+                className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md aspect-square rounded-[32px] border border-[var(--border-color)]
                            overflow-hidden flex items-center justify-center"
                 style={{
                   background: 'linear-gradient(160deg, #F3F6FA 0%, #FFFFFF 55%, #EEF4FF 100%)',
@@ -125,7 +125,7 @@ const About = () => {
             </motion.div>
           </div>
 
-          <div className="mt-32">
+          <div className="mt-16 lg:mt-32">
             <motion.h2 {...fadeUp(0)} className="text-3xl font-bold mb-12 tracking-tight">
               What I Do
             </motion.h2>

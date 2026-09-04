@@ -185,13 +185,13 @@ const Positioning = () => {
 
   return (
     <section
-      className="relative pt-12 pb-24 lg:pt-16 lg:pb-32 overflow-hidden"
+      className="relative pt-10 pb-16 sm:pt-12 sm:pb-24 lg:pt-16 lg:pb-32 overflow-hidden"
       style={{ background: '#F3F6FA' }}
     >
       <SectionNetwork />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

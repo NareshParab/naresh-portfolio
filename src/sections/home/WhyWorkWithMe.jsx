@@ -19,12 +19,12 @@ const principles = [
 
 const WhyWorkWithMe = () => {
   return (
-    <section className="py-24 lg:py-32">
+    <section className="py-16 sm:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 sticky top-32">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6 lg:sticky lg:top-32">
               Technology is the tool.<br />The problem comes first.
             </h2>
           </div>

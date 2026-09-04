@@ -78,7 +78,7 @@ const Contact = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen pt-32 pb-20 flex items-center justify-center relative overflow-hidden">
+      <div className="pt-24 pb-16 flex items-center justify-center relative overflow-hidden">
         <div
           className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(0,112,243,0.08) 0%, transparent 70%)', filter: 'blur(10px)' }}
@@ -116,7 +116,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-[var(--bg-color)] min-h-screen overflow-hidden">
+    <div className="relative pt-20 pb-16 sm:pt-28 sm:pb-20 lg:pt-40 lg:pb-28 bg-[var(--bg-color)] overflow-hidden">
 
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div
@@ -129,7 +129,7 @@ const Contact = () => {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16">
 
           <div className="lg:col-span-5">
