@@ -1,7 +1,8 @@
-import { User, ArrowRight, Globe, Workflow, Code2 } from 'lucide-react';
+import { ArrowRight, Globe, Workflow, Code2, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import FinalCTA from '../sections/home/FinalCTA';
+import nareshPhoto from '../assets/naresh-photo.jpeg';
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },
@@ -10,10 +11,23 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] },
 });
 
-const principles = [
-  'Business-first thinking',
-  'Full-system thinking',
-  'Quality & Polish',
+const pills = [
+  'Web Development',
+  'SaaS',
+  'Automation',
+  'AI / Data',
+  'Digital Products',
+  'Problem Solver'
+];
+
+const technologies = [
+  'React',
+  'TypeScript',
+  'Node.js',
+  'Python',
+  'PostgreSQL',
+  'SQL',
+  'Git'
 ];
 
 const whatIDo = [
@@ -38,7 +52,7 @@ const About = () => {
   return (
     <>
       <div className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-
+        {/* Background Gradients */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div
             className="absolute -top-40 -left-32 w-[520px] h-[520px] rounded-full opacity-60"
@@ -51,9 +65,11 @@ const About = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            <div>
+          {/* Main Hero Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            
+            {/* Left Content */}
+            <div className="order-2 lg:order-1">
               <motion.div {...fadeUp(0)} className="inline-flex items-center gap-2 mb-6">
                 <span className="w-6 h-[2px] bg-[#0070F3] rounded-full" />
                 <span className="text-[11px] font-mono font-semibold tracking-[0.18em] text-[#0070F3] uppercase">
@@ -79,53 +95,143 @@ const About = () => {
               </motion.div>
 
               <motion.div {...fadeUp(0.24)} className="flex flex-wrap gap-2.5 mt-9">
-                {principles.map((p) => (
+                {pills.map((p) => (
                   <span
                     key={p}
-                    className="text-[12.5px] font-semibold text-[#374151] bg-[#F3F6FA] border border-[#E5E7EB]
-                               px-4 py-2 rounded-full tracking-tight"
+                    className="text-[13px] font-medium text-[#374151] bg-[#F3F6FA] border border-[#E5E7EB]
+                               px-4 py-1.5 rounded-full tracking-tight transition-colors hover:bg-gray-100"
                   >
                     {p}
                   </span>
                 ))}
               </motion.div>
+
+              <motion.div {...fadeUp(0.32)} className="mt-12">
+                <Link to="/contact" className="inline-flex items-center text-[#0070F3] font-semibold text-lg hover:text-[#005bb5] transition-colors group">
+                  Let's build something great together
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24, scale: 0.98 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="flex justify-center lg:justify-end w-full"
-            >
-              <div
-                className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md aspect-square rounded-[32px] border border-[var(--border-color)]
-                           overflow-hidden flex items-center justify-center"
-                style={{
-                  background: 'linear-gradient(160deg, #F3F6FA 0%, #FFFFFF 55%, #EEF4FF 100%)',
-                  boxShadow: '0 20px 60px rgba(0,0,0,0.06)',
-                }}
+            {/* Right Content - Portrait & Cards */}
+            <div className="order-1 lg:order-2">
+              <motion.div
+                initial={{ opacity: 0, y: 24, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="w-full flex justify-center lg:justify-end"
               >
-                <div
-                  className="absolute w-[70%] aspect-square rounded-full"
-                  style={{ background: 'radial-gradient(circle, rgba(0,112,243,0.12) 0%, transparent 70%)' }}
-                />
-                <div className="relative z-10 text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-white border border-[var(--border-color)] shadow-sm flex items-center justify-center">
-                    <User className="w-10 h-10 text-gray-300" />
-                  </div>
-                  <span className="text-gray-400 font-mono text-[13px] tracking-tight">Professional Photo Placeholder</span>
-                </div>
+                <div className="flex flex-col gap-6 w-full max-w-[400px] lg:max-w-[460px] relative">
+                  
+                  {/* Portrait Container */}
+                  <div className="relative w-full aspect-[4/5] rounded-[24px] lg:rounded-[32px] mx-auto z-10">
+                    {/* Soft Pale Blue Abstract Background Shape */}
+                    <div 
+                      className="absolute top-4 -right-3 bottom-6 -left-3 sm:-right-4 sm:-left-4 bg-[#E2F0FF] rounded-[24px] lg:rounded-[40px] -rotate-3 z-0" 
+                    />
+                    
+                    {/* The Image */}
+                    <div className="absolute inset-0 z-10 rounded-[24px] lg:rounded-[32px] overflow-hidden border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.06)] bg-white">
+                      <img 
+                        src={nareshPhoto} 
+                        alt="Naresh" 
+                        className="w-full h-full object-cover object-[center_20%]"
+                      />
+                    </div>
 
-                <div className="absolute bottom-5 left-5 z-10 inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-[var(--border-color)] px-3.5 py-2 rounded-full shadow-sm">
-                  <span className="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse flex-shrink-0" />
-                  <span className="text-[11.5px] font-semibold text-[#374151]">Available for freelance work</span>
+                    {/* Floating Label (Desktop/Tablet) */}
+                    <motion.div 
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.4 }}
+                      className="absolute top-8 -right-4 lg:-right-8 z-20 bg-white px-5 py-2.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.06)] border border-gray-100 hidden sm:block"
+                    >
+                      <span className="text-sm font-semibold text-gray-800 tracking-tight">Software Developer</span>
+                    </motion.div>
+
+                    {/* Info Card (Desktop/Tablet) */}
+                    <motion.div 
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.5 }}
+                      className="absolute bottom-28 -left-4 lg:-left-12 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.08)] border border-gray-100 hidden sm:flex flex-col gap-3 min-w-[210px]"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <MapPin className="w-4.5 h-4.5 text-[#0070F3]" />
+                        <span className="text-[13px] font-medium text-gray-700">Based in Pune, India</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#16a34a] animate-pulse ml-1" />
+                        <span className="text-[13px] font-medium text-gray-700 ml-0.5">Available for freelance</span>
+                      </div>
+                    </motion.div>
+
+                    {/* Technology Card (Desktop/Tablet) */}
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6 }}
+                      className="absolute -bottom-6 -right-2 lg:-right-8 z-20 bg-white/95 backdrop-blur-md p-4 rounded-2xl shadow-[0_12px_30px_rgba(0,0,0,0.08)] border border-gray-100 hidden sm:block max-w-[210px]"
+                    >
+                      <div className="text-[11px] font-mono text-gray-400 uppercase tracking-wider mb-2.5">Technologies I work with</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {technologies.map(tech => (
+                          <span key={tech} className="text-[11px] font-semibold bg-[#F8FAFC] text-gray-600 px-2.5 py-1 rounded-md border border-gray-200">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Mobile Stacked Cards (Hidden on sm+) */}
+                  <div className="flex flex-col gap-4 sm:hidden relative z-10 w-full mt-4">
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      className="bg-white p-4 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col gap-3"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <MapPin className="w-4.5 h-4.5 text-[#0070F3]" />
+                        <span className="text-[13px] font-medium text-gray-700">Based in Pune, India</span>
+                      </div>
+                      <div className="flex items-center gap-2.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#16a34a] animate-pulse ml-1" />
+                        <span className="text-[13px] font-medium text-gray-700 ml-0.5">Available for freelance</span>
+                      </div>
+                    </motion.div>
+
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.1 }}
+                      className="bg-white p-4 rounded-2xl shadow-[0_4px_16px_rgba(0,0,0,0.04)] border border-gray-100"
+                    >
+                      <div className="text-[11px] font-mono text-gray-400 uppercase tracking-wider mb-2.5">Technologies I work with</div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {technologies.map(tech => (
+                          <span key={tech} className="text-[11px] font-semibold bg-[#F8FAFC] text-gray-600 px-2.5 py-1 rounded-md border border-gray-200">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </div>
+
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
 
-          <div className="mt-16 lg:mt-32">
+          {/* Lower Section (What I Do) - Preserved */}
+          <div className="mt-20 lg:mt-32">
             <motion.h2 {...fadeUp(0)} className="text-3xl font-bold mb-12 tracking-tight">
               What I Do
             </motion.h2>
