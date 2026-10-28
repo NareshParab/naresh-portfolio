@@ -28,11 +28,11 @@ const SelectedProjects = () => {
               <div className={`w-full aspect-[4/3] bg-gray-100 rounded-3xl border border-[var(--border-color)] overflow-hidden relative group ${
                 index % 2 !== 0 ? 'lg:order-2' : ''
               }`}>
-                {/* Placeholder Image container */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 font-mono text-sm bg-gray-50">
-                  Image: {project.title}
-                </div>
-                {/* Once you have images: <img src={project.image} alt={project.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" /> */}
+                <img
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
               </div>
 
               <div className={index % 2 !== 0 ? 'lg:order-1' : ''}>
@@ -51,7 +51,7 @@ const SelectedProjects = () => {
                   ))}
                 </div>
                 <Link
-                  to={`/projects`}
+                  to={project.caseStudyLink || `/projects`}
                   className="inline-flex items-center gap-2 font-medium hover:text-[var(--accent)] transition-colors"
                 >
                   View Case Study <ArrowRight className="w-4 h-4" />
