@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, User } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import nareshPhoto from '../../assets/naresh-photo.jpeg';
 
 const ShortAbout = () => {
   return (
@@ -22,9 +23,13 @@ const ShortAbout = () => {
             </Link>
           </div>
 
-          <div className="order-1 md:order-2 flex justify-start md:justify-end">
-            <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-gray-100 rounded-full border-4 border-white shadow-sm flex items-center justify-center overflow-hidden">
-              <User className="w-24 h-24 text-gray-300" />
+          <div className="order-1 md:order-2 flex justify-center md:justify-end">
+            <div className="w-48 sm:w-64 md:w-72 lg:w-80 aspect-[4/5] bg-[#E2F0FF] rounded-[24px] border-4 border-white shadow-[0_20px_50px_rgba(0,0,0,0.08)] overflow-hidden">
+              <img
+                src={nareshPhoto}
+                alt="Naresh, software developer"
+                className="w-full h-full object-cover object-[center_20%]"
+              />
             </div>
           </div>
 

@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import {
   Code2,
@@ -7,7 +8,9 @@ import {
   Layers,
   Database,
   Wrench,
-  ArrowUpRight
+  ArrowUpRight,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 
 const capabilities = [
@@ -44,6 +47,14 @@ const itemVariants = {
 };
 
 const CapabilityStrip = () => {
+  const scrollerRef = useRef(null);
+
+  const scrollCapabilities = (direction) => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    scroller.scrollBy({ left: direction * scroller.clientWidth * 0.75, behavior: 'smooth' });
+  };
+
   return (
     <div className="w-full px-6 lg:px-12 pb-4 lg:pb-6">
       <div className="max-w-7xl mx-auto">
@@ -68,14 +79,18 @@ const CapabilityStrip = () => {
           </div>
 
           {/* Capabilities Row */}
-          <div className="flex overflow-x-auto scrollbar-none" style={{ WebkitOverflowScrolling: 'touch' }}>
+          <div
+            ref={scrollerRef}
+            className="capability-scroller flex overflow-x-auto snap-x snap-proximity md:overflow-visible"
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {capabilities.map((cap) => {
               const Icon = cap.icon;
               return (
                 <motion.div
                   key={cap.id}
                   variants={itemVariants}
-                  className="group relative flex-shrink-0 w-[140px] md:w-auto md:flex-1 p-4 lg:p-5
+                  className="group relative flex-shrink-0 w-[140px] md:w-auto md:flex-1 snap-start p-4 lg:p-5
                              border-r border-white/[0.08] last:border-r-0 cursor-pointer
                              bg-transparent hover:bg-white/[0.02] transition-colors duration-300 overflow-hidden"
                 >
@@ -109,6 +124,29 @@ const CapabilityStrip = () => {
                 </motion.div>
               );
             })}
+          </div>
+
+          <div className="flex items-center justify-end gap-3 px-5 py-3 border-t border-white/[0.08] md:hidden">
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => scrollCapabilities(-1)}
+                aria-label="Scroll capabilities left"
+                className="w-8 h-8 rounded-full border border-white/15 text-white/70 flex items-center justify-center
+                           hover:bg-white/10 hover:text-white active:scale-95 transition-all"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollCapabilities(1)}
+                aria-label="Scroll capabilities right"
+                className="w-8 h-8 rounded-full border border-white/15 text-white/70 flex items-center justify-center
+                           hover:bg-white/10 hover:text-white active:scale-95 transition-all"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>

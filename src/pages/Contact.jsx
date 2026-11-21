@@ -10,10 +10,10 @@ const fadeUp = (delay = 0) => ({
 });
 
 const contactLinks = [
-  { icon: Mail, label: 'workingnaresh00@gmail.com', href: 'mailto:workingnaresh00@gmail.com' },
+  { icon: Mail, label: 'workingnaresh00@gmail.com', href: 'https://mail.google.com/mail/?view=cm&fs=1&to=workingnaresh00%40gmail.com', external: true },
   { icon: Phone, label: '+91 84460 72604', href: 'tel:+918446072604' },
-  { icon: Briefcase, label: 'linkedin.com/in/naresh-parab-56ab8129b', href: 'https://www.linkedin.com/in/naresh-parab-56ab8129b', external: true },
-  { icon: GitBranch, label: 'github.com/NareshParab', href: 'https://github.com/NareshParab', external: true },
+  { icon: Briefcase, label: 'LinkedIn', href: 'https://www.linkedin.com/in/naresh-parab-56ab8129b', external: true },
+  { icon: GitBranch, label: 'GitHub', href: 'https://github.com/NareshParab', external: true },
 ];
 
 const SelectField = ({ id, name, label, value, onChange, placeholder, options }) => (

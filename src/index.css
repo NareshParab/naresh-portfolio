@@ -39,3 +39,33 @@
     font-family: 'JetBrains Mono', monospace;
   }
 }
+
+.capability-scroller {
+  scrollbar-width: thin;
+  scrollbar-color: #0070F3 rgba(255, 255, 255, 0.12);
+}
+
+.capability-scroller::-webkit-scrollbar {
+  height: 5px;
+}
+
+.capability-scroller::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  margin: 0 12px;
+}
+
+.capability-scroller::-webkit-scrollbar-thumb {
+  background: rgba(0, 112, 243, 0.85);
+  border-radius: 9999px;
+}
+
+@media (min-width: 768px) {
+  .capability-scroller {
+    scrollbar-width: none;
+  }
+
+  .capability-scroller::-webkit-scrollbar {
+    display: none;
+  }
+}
