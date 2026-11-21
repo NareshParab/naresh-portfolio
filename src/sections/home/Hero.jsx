@@ -90,19 +90,19 @@ const DashboardVisual = () => {
         </div>
 
         {/* Body */}
-        <div className="flex flex-1 relative z-10">
+        <div className="flex flex-1 flex-col md:flex-row relative z-10">
           {/* Left avatar panel */}
           <div 
-            className="w-[38%] border-r border-[#F0F0F0] relative flex items-center justify-center overflow-hidden flex-shrink-0"
+            className="w-full h-[180px] sm:h-[210px] md:w-[38%] md:h-auto border-b md:border-b-0 md:border-r border-[#F0F0F0] relative flex items-center justify-center overflow-hidden flex-shrink-0"
             style={{
               background: 'radial-gradient(circle, rgba(0,112,243,0.10) 0%, rgba(0,112,243,0) 70%)'
             }}
           >
-            <img src={avatarImg} alt="Naresh" className="w-full h-full object-cover" />
+            <img src={avatarImg} alt="Naresh" className="w-auto max-w-full h-full md:w-full object-contain md:object-cover" />
           </div>
 
           {/* Right content panel */}
-          <div className="flex-1 p-6 sm:p-8 flex flex-col justify-center relative overflow-hidden bg-white">
+          <div className="flex-1 p-4 sm:p-8 flex flex-col justify-center relative overflow-hidden bg-white">
             <AnimatePresence mode="wait">
               {step === 0 ? (
                 <motion.div 
@@ -113,12 +113,12 @@ const DashboardVisual = () => {
                   transition={{ duration: 0.35, ease: 'easeOut' }} 
                   className="flex flex-col w-full h-full justify-center items-center"
                 >
-                  <div className="text-center mb-8">
+                  <div className="text-center mb-5 md:mb-8">
                     <h3 className="text-[20px] sm:text-[22px] font-black text-[#111]">My Work Process</h3>
                     <p className="text-[12px] text-[#666] font-medium mt-1">A clear, simple workflow from idea to impact.</p>
                   </div>
                   
-                  <div className="flex items-start justify-between relative w-full px-2 overflow-x-auto">
+                  <div className="hidden md:flex items-start justify-between relative w-full px-2">
                     <div className="absolute left-8 right-8 top-[22px] border-t-2 border-dotted border-[#E5E7EB] -z-10" />
                     {processSteps.map((item) => {
                       const Icon = item.icon;
@@ -136,9 +136,26 @@ const DashboardVisual = () => {
                     })}
                   </div>
 
-                  <div className="mt-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#F5F9FF] border border-[#E5EEFB]">
+                  <div className="md:hidden grid grid-cols-2 gap-2">
+                    {processSteps.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <div key={item.id} className={`flex items-start gap-2.5 p-2.5 rounded-xl border border-[#E5E7EB] bg-[#FAFBFC] ${item.active ? 'col-span-2' : ''}`}>
+                          <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${item.active ? 'bg-[#0070F3] shadow-[0_0_12px_rgba(0,112,243,0.25)]' : 'bg-[#111]'}`}>
+                            <Icon className="w-4 h-4 text-white" />
+                          </div>
+                          <div className="min-w-0 pt-0.5">
+                            <div className="text-[10px] font-bold text-[#111] uppercase leading-tight">{item.id}</div>
+                            <div className="text-[10px] text-[#666] leading-snug mt-1">{item.desc}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div className="mt-4 md:mt-10 inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full bg-[#F5F9FF] border border-[#E5EEFB]">
                     <Sparkles className="w-3.5 h-3.5 text-[#0070F3]" />
-                    <span className="text-[11px] text-[#0070F3] font-medium">Focused on clarity, performance and real business outcomes.</span>
+                    <span className="text-center text-[10px] md:text-[11px] text-[#0070F3] font-medium">Focused on clarity, performance and real business outcomes.</span>
                   </div>
                 </motion.div>
               ) : (
